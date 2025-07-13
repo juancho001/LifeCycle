@@ -1,4 +1,5 @@
 import { afterNextRender, afterRender, Component, effect, OnInit, signal } from '@angular/core';
+import { TitleComponent } from '../../components/title/title.component';
 
 const log = (...messages:string[]) =>
 {
@@ -9,7 +10,7 @@ const log = (...messages:string[]) =>
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [TitleComponent],
   templateUrl: './home-page.component.html',
 })
 
@@ -22,10 +23,10 @@ export class HomePageComponent implements OnInit {
   constructor() {
     log('Constructor lamado')
 
-    setTimeout(()=>{
-      this.traditionalProperty = 'Juan Carlos';
-      console.log('hecho');
-    },2000);
+    // setTimeout(()=>{
+    //   this.traditionalProperty = 'Juan Carlos';
+    //   console.log('hecho');
+    // },2000);
   }
 
   changeTraditional(){
