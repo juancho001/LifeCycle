@@ -39,4 +39,5 @@ Para obtener más información sobre el uso de la Angular CLI, incluyendo refere
 ```bash
 1. Creación de los directorios de trabajo y configurando las rutas
 2. Estudio del ciclo de vidad de los componentes
+3. Zoneless Angular
 ```

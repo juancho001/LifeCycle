@@ -1,4 +1,4 @@
-import { afterNextRender, afterRender, Component, effect, OnInit } from '@angular/core';
+import { afterNextRender, afterRender, Component, effect, OnInit, signal } from '@angular/core';
 
 const log = (...messages:string[]) =>
 {
@@ -15,11 +15,26 @@ const log = (...messages:string[]) =>
 
 export class HomePageComponent implements OnInit {
 
+  traditionalProperty = 'Propiedad Tradicional Original';
+  signalPoperty = signal('Propiedad con uso de Signals Original');
+
+
   constructor() {
     log('Constructor lamado')
+
+    setTimeout(()=>{
+      this.traditionalProperty = 'Juan Carlos';
+      console.log('hecho');
+    },2000);
   }
 
+  changeTraditional(){
+     this.traditionalProperty = 'Propiedad Tradicional Cambiada';
+  }
 
+    changeSignal(){
+     this.signalPoperty.set('Propiedad con uso de Signals Cambiada');
+  }
 
 
 
